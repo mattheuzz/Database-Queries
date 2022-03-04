@@ -3,6 +3,7 @@ import {
   CreateDateColumn,
   Entity,
   ManyToMany,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -16,6 +17,9 @@ export class Game {
 
   @Column()
   title: string;
+
+  @Column()
+  genre: string;
 
   @ManyToMany(() => User, (user) => user.games)
   users: User[];
